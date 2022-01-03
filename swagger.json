@@ -3,7 +3,12 @@
   "servers" : [ {
     "description" : "SwaggerHub API Auto Mocking",
     "url" : "https://virtserver.swaggerhub.com/Euanher/MyCVnew/1.0.0",
-    "variables" : null
+    "variables" : {
+      " Function:\n    db.View addNewView(string dbpackage)\n\n\nArguments:\n    - dbpackage: create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument \n" : {
+        "default" : "USE `mydb`; CREATE  OR REPLACE VIEW Login_View AS SELECT     idLogin,         name,         Email,         User,         Recruiter     FROM     Login_View INNER JOIN User USING (idUser_Logcol) INNER JOIN Recruiter USING (idRecruiter_Log) GROUP BY    Routines3",
+        "enum" : [ "USE `mydb`; CREATE  OR REPLACE VIEW Login_View AS SELECT     idLogin,         name,         Email,         User,         Recruiter     FROM     Login_View INNER JOIN User USING (idUser_Logcol) INNER JOIN Recruiter USING (idRecruiter_Log) GROUP BY    Routines3" ]
+      }
+    }
   } ],
   "info" : {
     "description" : "This is a simple API",
