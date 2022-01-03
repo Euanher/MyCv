@@ -1,0 +1,131 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Euanher/MyCVnew/1.0.0
+    variables:
+      New Variable 1:
+        default: ""
+        enum:
+          - ""
+      "Function:\n    db.Table addNewTable(string dbpackage)\n\n\nArguments:\n    - dbpackage: \n\n\ncreate and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument ":
+        default: Function:    db.Table addNewTable(string dbpackage)Arguments:    - dbpackage: create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument 
+      "Function:     db.Table addNewTable(string dbpackage) Arguments:     - dbpackage:  create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument ":
+        default: ""
+      " Function:\n    db.View addNewView(string dbpackage)\n\n\nArguments:\n    - dbpackage: create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument \n":
+        default: ""
+      " Function:     db.View addNewView(string dbpackage) Arguments:     - dbpackage: create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument  ":
+        default: ""
+      initOAuth:
+        default: 'ui.initOAuth({     clientId: "your-client-id",     clientSecret: "your-client-secret-if-required",     realm: "your-realms",     appName: "your-app-name",     scopeSeparator: " ",     scopes: "openid profile",     additionalQueryStringParams: {test: "hello"},     usePkceWithAuthorizationCodeGrant: true   })'
+        enum:
+          - (configObj) => void
+      "initOAuth:OAuth_Client_ID,OAuth_Realm,OAuth_App_Name":
+        default: ""
+      "New Variable initOAuth:OAuth_Client_ID,OAuth_Realm,OAuth_App_Name":
+        default: ""
+      New Variable :
+        default: ""
+      New Variable  OAuth2RedirectURL:
+        default: ""
+      " New Variable useUnsafeMarkdown":
+        default: ""
+info:
+  description: This is a simple API
+  version: "1.0.0"
+  title: Simple Inventory API
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: admins
+    description: Secured Admin-only calls
+  - name: developers
+    description: Operations available to regular developers
+paths:
+  /inventory:
+    get:
+      tags:
+        - developers
+      summary: searches inventory
+      operationId: searchInventory
+      description: |
+        By passing in the appropriate options, you can search for
+        available inventory in the system
+      parameters:
+        - in: query
+          name: searchString
+          description: pass an optional search string for looking up inventory
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: skip
+          description: number of records to skip for pagination
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+        - in: query
+          name: limit
+          description: maximum number of records to return
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+            maximum: 50
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MySQL'
+        '400':
+          description: bad input parameter
+    post:
+      tags:
+        - developers
+        - admins
+      operationId: addInventory
+      description: Adds an item to the system
+      responses:
+        '201':
+          description: item created
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryItem'
+        description: Inventory item to add
+      summary: Add View
+components:
+    Schema:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+    schemas:
+      mydb:
+        type: object
+        properties:
+          id:
+            type: integer
+            format: int64
+        description: "CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 "
+      Localdb:
+        type: object
+        properties:
+          id:
+            type: integer
+            format: int64
+        description: "CREATE SCHEMA IF NOT EXISTS `LocalDB` DEFAULT CHARACTER SET utf8mb4 "
