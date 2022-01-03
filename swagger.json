@@ -3,49 +3,7 @@
   "servers" : [ {
     "description" : "SwaggerHub API Auto Mocking",
     "url" : "https://virtserver.swaggerhub.com/Euanher/MyCVnew/1.0.0",
-    "variables" : {
-      "New Variable 1" : {
-        "default" : "",
-        "enum" : [ "" ]
-      },
-      "Function:\n    db.Table addNewTable(string dbpackage)\n\n\nArguments:\n    - dbpackage: \n\n\ncreate and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument " : {
-        "default" : "Function:    db.Table addNewTable(string dbpackage)Arguments:    - dbpackage: create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument "
-      },
-      "Function:     db.Table addNewTable(string dbpackage) Arguments:     - dbpackage:  create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument " : {
-        "default" : ""
-      },
-      " Function:\n    db.View addNewView(string dbpackage)\n\n\nArguments:\n    - dbpackage: create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument \n" : {
-        "default" : ""
-      },
-      " Function:     db.View addNewView(string dbpackage) Arguments:     - dbpackage: create and add a new table to the schema. For MySQL tables, pass db.mysql as the dbpackage argument  " : {
-        "default" : ""
-      },
-      "initOAuth" : {
-        "default" : "ui.initOAuth({     clientId: \"your-client-id\",     clientSecret: \"your-client-secret-if-required\",     realm: \"your-realms\",     appName: \"your-app-name\",     scopeSeparator: \" \",     scopes: \"openid profile\",     additionalQueryStringParams: {test: \"hello\"},     usePkceWithAuthorizationCodeGrant: true   })",
-        "enum" : [ "(configObj) => void" ]
-      },
-      "initOAuth:OAuth_Client_ID,OAuth_Realm,OAuth_App_Name" : {
-        "default" : ""
-      },
-      "New Variable initOAuth:OAuth_Client_ID,OAuth_Realm,OAuth_App_Name" : {
-        "default" : ""
-      },
-      "New Variable " : {
-        "default" : ""
-      },
-      "New Variable  OAuth2RedirectURL" : {
-        "default" : ""
-      },
-      " New Variable useUnsafeMarkdown" : {
-        "default" : ""
-      },
-      "New Variable 1 -- Connection Id: 5\n-- User: event_scheduler\n-- Host: localhost\n-- DB: None\n-- Command: Daemon\n-- Time: 10984\n-- State: Waiting on empty queue\n" : {
-        "default" : ""
-      },
-      "New Variable 1 -- Connection Id: 5 -- User: event_scheduler -- Host: localhost -- DB: None -- Command: Daemon -- Time: 10984 -- State: Waiting on empty queue " : {
-        "default" : ""
-      }
-    }
+    "variables" : null
   } ],
   "info" : {
     "description" : "This is a simple API",
