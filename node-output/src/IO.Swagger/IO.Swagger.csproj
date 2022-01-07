@@ -43,6 +43,9 @@ Contact: you@your-company.com
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
     <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -93,16 +96,10 @@ Contact: you@your-company.com
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\.swagger-codegen\Euanher-MyCVnew-1.0.0-swagger.json">
-      <Link>OpenAPIs\Euanher-MyCVnew-1.0.0-swagger.json</Link>
-      <Namespace>MyCVNew</Namespace>
-      <ClassName>MYCV</ClassName>
-      <CodeGenerator>NSwagCSharp</CodeGenerator>
-    </None>
-    <None Include="..\..\.swagger-codegen\Euanher-MyCVnew-1.0.0-swagger.yaml">
-      <Link>OpenAPIs\Euanher-MyCVnew-1.0.0-swagger.yaml</Link>
-      <Namespace>MyCVNew</Namespace>
-      <ClassName>MYCV</ClassName>
+    <None Include="..\..\api\Euanher-MyCV-1.0.0-oas3-swagger.json">
+      <Link>OpenAPIs\Euanher-MyCV-1.0.0-oas3-swagger.json</Link>
+      <Namespace>MyCV</Namespace>
+      <ClassName>MyCV</ClassName>
       <CodeGenerator>NSwagCSharp</CodeGenerator>
     </None>
     <None Include="..\..\api\openapi.yaml">
@@ -168,6 +165,7 @@ Contact: you@your-company.com
     <None Include="mydbDataSet1.xss">
       <DependentUpon>mydbDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
