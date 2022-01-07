@@ -73,7 +73,7 @@
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/localhostItem"
+                "$ref" : "#/definitions/localhost/mydb"
               }
             },
             "content" : {
