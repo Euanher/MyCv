@@ -12,7 +12,8 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "description" : "This is a simple API"
+    "description" : "This is a simple API",
+    "termsOfService" : "https://github.com/Euanher/MyCv.git"
   },
   "host" : "virtserver.swaggerhub.com",
   "basePath" : "/Euanher/MyCV/1.0.0",
