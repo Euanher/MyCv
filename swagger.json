@@ -81,7 +81,7 @@
                 "schema" : {
                   "type" : "array",
                   "items" : {
-                    "$ref" : "#/components/schemas/mydb"
+                    "$ref" : "#/components/ localhost/mydb"
                   }
                 }
               }
