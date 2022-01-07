@@ -39,9 +39,8 @@
           "description" : "pass an optional search string for looking up localhost",
           "required" : true,
           "type" : "string",
-          "schema" : [ {
-            "type" : "connection id"
-          } ]
+          "schema" : null,
+          "$ref" : "#/localhost/mydb"
         }, {
           "in" : "query",
           "name" : "skip",
