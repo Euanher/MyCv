@@ -165,7 +165,7 @@
             "format" : "int64"
           }
         },
-        "description" : "CREATE SCHEMA IF NOT EXISTS `LocalDB` DEFAULT CHARACTER SET utf8mb4 "
+        "description" : "CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 "
       }
     }
   },
