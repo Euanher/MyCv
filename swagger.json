@@ -28,7 +28,7 @@
   "paths" : {
     "/localhost" : {
       "get" : {
-        "tags" : [ "admins", "developers", "admins" ],
+        "tags" : [ "admins", "developers", "user", "login", "recruiter", "Register" ],
         "summary" : "searches localhost",
         "operationId" : "searchlocalhost",
         "produces" : [ "application/json" ],
