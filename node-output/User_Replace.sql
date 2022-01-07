@@ -1,6 +1,11 @@
 CREATE  VIEW User_Replace AS 
 ( Select true AS 'TABLE values' union all
- (SELECT values ( 'select' or replace (second('select' "all union") and var_pop(locate ('table' 'select' in ('idLogin_Logcol'(log)) (select) [values]) with database(local)) add to abs within(table) (values)) all values in space( VIEW(table value)) sec_to_time(asbbinary(ord(return[])))
+ (SELECT values ( 'select' or replace (second('select' "all union") 
+ and 
+ var_pop(locate ('table' 'select' in (idLogin_Logcol(log)) as 
+ "select update" within( xml( all updatexml(update) table use[values]) as union (select with) values inet_MERLIA (update) (load select (insert[select values])))
+ with all union (select) call values with (binary(version)) load_file(Table)  as with'binary' abs(session_user)(variance(id))  [select values])
+ with database(local)) add to abs within(table) (values)) all values in space( VIEW(table value)) sec_to_time(asbbinary(ord(return[])))
  to_base64(abs(atan2( interiorringn( database data( values))
  values(validate_password_strength((asbbinary(Locate('load_file()')))) 
  st_contains(Register_Log[]abs id ))
