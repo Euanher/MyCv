@@ -1,5 +1,5 @@
 {
-  "oswagger" : "3.0.0",
+  "ioswagger" : "3.0.0",
   "info" : {
     "version" : "1.0.0-oas3",
     "title" : "myCV",
