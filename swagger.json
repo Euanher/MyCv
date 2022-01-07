@@ -77,7 +77,7 @@
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/InventoryItem"
+                "$ref" : "#/definitions/localhostItem"
               }
             },
             "content" : {
@@ -85,7 +85,7 @@
                 "schema" : {
                   "type" : "array",
                   "items" : {
-                    "$ref" : "#/components/schemas/MySQL"
+                    "$ref" : "#/components/schemas/mydb"
                   }
                 }
               }
@@ -98,16 +98,16 @@
       },
       "post" : {
         "tags" : [ "developers", "admins" ],
-        "operationId" : "addInventory",
+        "operationId" : "addlocalhost",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "body",
-          "name" : "inventoryItem",
-          "description" : "Inventory item to add",
+          "name" : "localhostItem",
+          "description" : "localhost item to add",
           "required" : false,
           "schema" : {
-            "$ref" : "#/definitions/InventoryItem"
+            "$ref" : "#/definitions/localhostItem"
           }
         } ],
         "description" : "Adds an item to the system",
@@ -126,7 +126,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/InventoryItem"
+                "$ref" : "#/components/schemas/mydbItem"
               }
             }
           },
