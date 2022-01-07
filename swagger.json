@@ -93,7 +93,7 @@
         }
       },
       "post" : {
-        "tags" : [ "developers", "admins" ],
+        "tags" : [ "developers", "admins", "Login", "Register", "Recruiter", "User" ],
         "operationId" : "addlocalhost",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
