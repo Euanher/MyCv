@@ -81,7 +81,7 @@
                 "schema" : {
                   "type" : "array",
                   "items" : {
-                    "$ref" : "#/components/ localhost/mydb"
+                    "$ref" : "#/components/ localhost/mydbItem"
                   }
                 }
               }
@@ -103,7 +103,7 @@
           "description" : "localhost item to add",
           "required" : false,
           "schema" : {
-            "$ref" : "#/definitions/localhostItem"
+            "$ref" : "#/definitions/localhost/mydbItem"
           }
         } ],
         "description" : "Adds an item to the system",
