@@ -1,0 +1,9 @@
+C:\Mycv\mycv\bin\Debug\mycv.exe.config
+C:\Mycv\mycv\bin\Debug\mycv.exe
+C:\Mycv\mycv\bin\Debug\mycv.pdb
+C:\Mycv\mycv\obj\Debug\mycv.csproj.AssemblyReference.cache
+C:\Mycv\mycv\obj\Debug\mycv.Properties.Resources.resources
+C:\Mycv\mycv\obj\Debug\mycv.csproj.GenerateResource.cache
+C:\Mycv\mycv\obj\Debug\mycv.csproj.CoreCompileInputs.cache
+C:\Mycv\mycv\obj\Debug\mycv.exe
+C:\Mycv\mycv\obj\Debug\mycv.pdb

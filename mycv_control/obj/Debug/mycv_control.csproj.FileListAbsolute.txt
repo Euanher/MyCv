@@ -1,0 +1,6 @@
+C:\Mycv\mycv_control\bin\Debug\mycv_control.dll
+C:\Mycv\mycv_control\bin\Debug\mycv_control.pdb
+C:\Mycv\mycv_control\obj\Debug\mycv_control.csproj.AssemblyReference.cache
+C:\Mycv\mycv_control\obj\Debug\mycv_control.csproj.CoreCompileInputs.cache
+C:\Mycv\mycv_control\obj\Debug\mycv_control.dll
+C:\Mycv\mycv_control\obj\Debug\mycv_control.pdb
