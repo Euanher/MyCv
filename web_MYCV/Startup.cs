@@ -30,7 +30,9 @@ namespace web_MYCV
             services.AddControllers();
             _ = services.AddSwaggerGen(c =>
               {
-                  c.SwaggerDoc("v1", new OpenApiInfo { Title = "web_MYCV", Version = "v1" });
+                  OpenApiInfo openApiInfo = new OpenApiInfo { Title = "MyCV", Version = "v3.0.0oas3" };
+                  OpenApiInfo info = openApiInfo;
+                  c.SwaggerDoc("vv3.0.0oas3", info);
               });
             services.AddApplicationInsightsTelemetry();
         }
@@ -42,7 +44,7 @@ namespace web_MYCV
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "web_MYCV v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v3.0.0oas3/swagger.json", "MyCV v3.0.0oas3"));
             }
 
             app.UseHttpsRedirection();

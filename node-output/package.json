@@ -1,20 +1,12 @@
 {
-  "name": "simple-inventory-api",
+  "name": "swagger-docs",
   "version": "1.0.0",
-  "description": "This is a simple API",
-  "main": "index.js",
-  "scripts": {
-	"prestart": "npm install",
-	"start": "node index.js"
+  "main": "main.js",
+  "engines": {
+    "node": ">= 0.8.x"
   },
-  "keywords": [
-    "swagger"
-  ],
-  "license": "Unlicense",
-  "private": true,
   "dependencies": {
-    "connect": "^3.2.0",
-    "js-yaml": "^3.3.0",
-    "oas3-tools": "^2.2.3"
-  }
+    "express": "3.x"
+  },
+  "license": "Unlicense"
 }

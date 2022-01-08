@@ -88,6 +88,7 @@ Contact: you@your-company.com
       <DesignTime>True</DesignTime>
       <DependentUpon>mydbDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="OpenAPIs\openapi.cs" />
     <Compile Include="OpenAPIs\package.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -96,28 +97,22 @@ Contact: you@your-company.com
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\api\Euanher-MyCV-1.0.0-oas3-swagger.json">
-      <Link>OpenAPIs\Euanher-MyCV-1.0.0-oas3-swagger.json</Link>
-      <Namespace>MyCV</Namespace>
-      <ClassName>MyCV</ClassName>
+    <None Include="..\..\api\Euanher-MyCV-3.0.0-oas3-swagger.json">
+      <Link>OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.json</Link>
+      <Namespace>Web_MyCV</Namespace>
+      <ClassName>Web_MyCV</ClassName>
+      <CodeGenerator>NSwagCSharp</CodeGenerator>
+    </None>
+    <None Include="..\..\api\Euanher-MyCV-3.0.0-oas3-swagger.yaml">
+      <Link>OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.yaml</Link>
+      <Namespace>Web_MyCV</Namespace>
+      <ClassName>Web_MyCV</ClassName>
       <CodeGenerator>NSwagCSharp</CodeGenerator>
     </None>
     <None Include="..\..\api\openapi.yaml">
       <Link>OpenAPIs\openapi.yaml</Link>
-      <Namespace>MyCV</Namespace>
-      <ClassName>MyCV</ClassName>
-      <CodeGenerator>NSwagCSharp</CodeGenerator>
-    </None>
-    <None Include="..\..\package.json">
-      <Link>OpenAPIs\package.json</Link>
-      <Namespace>MyCV</Namespace>
-      <ClassName>MyCV</ClassName>
-      <CodeGenerator>NSwagCSharp</CodeGenerator>
-    </None>
-    <None Include="..\..\swagger.yaml">
-      <Link>OpenAPIs\swagger.yaml</Link>
-      <Namespace>MyCVNew</Namespace>
-      <ClassName>MYCV</ClassName>
+      <Namespace>Web_MyCV</Namespace>
+      <ClassName>Web_MyCV</ClassName>
       <CodeGenerator>NSwagCSharp</CodeGenerator>
     </None>
     <None Include="app.config" />
@@ -174,6 +169,9 @@ Contact: you@your-company.com
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
