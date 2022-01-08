@@ -457,5 +457,9 @@
         "description" : "I"
       }
     }
+  },
+  "externalDocs" : {
+    "description" : "C:/Mycv/web_MYCV/wwwroot",
+    "url" : "file:///C:/Mycv/web_MYCV/wwwroot"
   }
 }
