@@ -73,6 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mydbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="OpenAPIs\openapi.cs" />
     <Compile Include="OpenAPIs\package.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -89,10 +90,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\node-output\package.json">
-      <Link>OpenAPIs\package.json</Link>
-      <Namespace>mycv_service</Namespace>
-      <ClassName>mycv_service</ClassName>
+    <None Include="..\node-output\api\Euanher-MyCV-3.0.0-oas3-swagger.json">
+      <Link>OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.json</Link>
+      <Namespace>MyCV</Namespace>
+      <ClassName>MyCV</ClassName>
+      <CodeGenerator>NSwagCSharp</CodeGenerator>
+    </None>
+    <None Include="..\node-output\api\Euanher-MyCV-3.0.0-oas3-swagger.yaml">
+      <Link>OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.yaml</Link>
+      <CodeGenerator>NSwagCSharp</CodeGenerator>
+    </None>
+    <None Include="..\node-output\api\openapi.yaml">
+      <Link>OpenAPIs\openapi.yaml</Link>
+      <Namespace>MyCV</Namespace>
+      <ClassName>MyCV</ClassName>
       <CodeGenerator>NSwagCSharp</CodeGenerator>
     </None>
     <None Include="App.config" />

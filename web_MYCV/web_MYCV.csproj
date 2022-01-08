@@ -6,8 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="appsettings.Development.json" />
+    <Content Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <OpenApiReference Include="..\node-output\api\Euanher-MyCV-3.0.0-oas3-swagger.json" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.json" />
+    <OpenApiReference Include="..\node-output\api\Euanher-MyCV-3.0.0-oas3-swagger.yaml" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.yaml" />
+    <OpenApiReference Include="..\node-output\api\openapi.yaml" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\openapi.yaml" />
+    <OpenApiReference Include="..\node-output\package-lock.json" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\package-lock.json" />
     <OpenApiReference Include="..\node-output\package.json" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\package.json" />
     <OpenApiReference Include="..\node-output\swagger.yaml" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\swagger.yaml" />
+    <OpenApiReference Include="appsettings.Development.json" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" />
+    <OpenApiReference Include="appsettings.json" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +28,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="NSwag.ApiDescription.Client" Version="13.15.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
