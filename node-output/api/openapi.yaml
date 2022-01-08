@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.0-oas3
 info:
   title: MyCv
   description: This is a simple API
@@ -47,13 +47,13 @@ paths:
       summary: Logs recruiter into the system
       operationId: loginRecruiter
       parameters:
-      - name: Recruitername
+      - name: string #schema/localhost/mydb/Recruitername
         in: query
         description: The recruiter name for login
         required: true
         style: form
         explode: true
-      - name: password
+      - name: string #schema/localhost/mydb/Recruitername/password
         in: query
         description: The password for login in clear text
         required: true
@@ -62,15 +62,7 @@ paths:
       responses:
         "200":
           description: successful operation
-          headers:
-            X-Rate-Limit:
-              description: calls per hour allowed by the recruiter
-              style: simple
-              explode: false
-            X-Expires-After:
-              description: date in UTC when token expires
-              style: simple
-              explode: false
+          
         "400":
           description: Invalid username/password supplied
       x-swagger-router-controller: Recruiter

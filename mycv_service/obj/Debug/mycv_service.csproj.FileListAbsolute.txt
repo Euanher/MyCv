@@ -1,3 +1,0 @@
-C:\Mycv\mycv_service\obj\Debug\mycv_service.csproj.AssemblyReference.cache
-C:\Mycv\mycv_service\obj\Debug\mycv_service.exe.config
-C:\Mycv\mycv_service\obj\Debug\mycv_service.csproj.CoreCompileInputs.cache

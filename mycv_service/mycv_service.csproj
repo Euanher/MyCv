@@ -53,6 +53,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +69,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mydbDataSet.cs">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="mydbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +92,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="System\Runtime\Serialization\EnumMemberAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\node-output\api\Euanher-MyCV-3.0.0-oas3-swagger.json">
@@ -100,13 +106,10 @@
       <Link>OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.yaml</Link>
       <CodeGenerator>NSwagCSharp</CodeGenerator>
     </None>
-    <None Include="..\node-output\api\openapi.yaml">
-      <Link>OpenAPIs\openapi.yaml</Link>
-      <Namespace>MyCV</Namespace>
-      <ClassName>MyCV</ClassName>
-      <CodeGenerator>NSwagCSharp</CodeGenerator>
-    </None>
     <None Include="App.config" />
+    <None Include="mydbDataSet.xsc">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="mydbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>mydbDataSet.Designer.cs</LastGenOutput>
@@ -225,14 +228,15 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\node-output\src\IO.Swagger.Test\IO.Swagger.Test.csproj">
-      <Project>{19f1debc-de5e-4517-8062-f000cd499087}</Project>
-      <Name>IO.Swagger.Test</Name>
-    </ProjectReference>
     <ProjectReference Include="..\node-output\src\IO.Swagger\IO.Swagger.csproj">
       <Project>{471be58d-87b2-4365-893f-da67f1ec9e6d}</Project>
       <Name>IO.Swagger</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Service1.resx">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -6,15 +6,14 @@ namespace web_MYCV
     {
         public DateTime Date { get; set; }
 
-        public int idLogin_Logcol { get; set; }
+        public int IdLogin_Logcol { get; set; }
 
-        public int idUser_Logcol { get; set; }
+        public int IdUser_Logcol { get; set; }
 
-        public int idRecruiter_Log { get; set; }
+        public int IdRecruiter_Log { get; set; }
 
-        public int idRegister_Log {get; set; }
-        
-
+        public int IdRegister_Log { get; set; }
+        [View]
         public string GETALLid { get; set; }
 
         public int Login_View { get; set; }
