@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38CA4A51-9F17-4300-AFCA-64AA14959551}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>mycv_service</RootNamespace>
+    <AssemblyName>mycv_service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
+    <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\node-output\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\node-output\packages\MySql.Data.8.0.27\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\node-output\packages\MySql.Data.8.0.27\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mydbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OpenAPIs\openapi.cs" />
+    <Compile Include="OpenAPIs\package.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\node-output\api\Euanher-MyCV-3.0.0-oas3-swagger.json">
+      <Link>OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.json</Link>
+      <Namespace>MyCV</Namespace>
+      <ClassName>MyCV</ClassName>
+      <CodeGenerator>NSwagCSharp</CodeGenerator>
+    </None>
+    <None Include="..\node-output\api\Euanher-MyCV-3.0.0-oas3-swagger.yaml">
+      <Link>OpenAPIs\Euanher-MyCV-3.0.0-oas3-swagger.yaml</Link>
+      <CodeGenerator>NSwagCSharp</CodeGenerator>
+    </None>
+    <None Include="..\node-output\api\openapi.yaml">
+      <Link>OpenAPIs\openapi.yaml</Link>
+      <Namespace>MyCV</Namespace>
+      <ClassName>MyCV</ClassName>
+      <CodeGenerator>NSwagCSharp</CodeGenerator>
+    </None>
+    <None Include="App.config" />
+    <None Include="mydbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mydbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mydbDataSet.xss">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\mycv_service.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\mydbDataSet.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlClearPasswordPlugin.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlNativePasswordPlugin.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlPemReader.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.AuthenticationPluginConfigurationElement.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.BaseCommandInterceptor.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.BaseTableCache.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.CharacterSet.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.CustomInstaller.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.InterceptorConfigurationElement.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Interceptors.BaseExceptionInterceptor.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Memcached.BinaryClient.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Memcached.Client.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Memcached.MemcachedException.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Memcached.TextClient.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlAttribute.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlAttributeCollection.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlBulkLoader.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlClientFactory.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlClientPermission.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlClientPermissionAttribute.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlCommand.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlConfiguration.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlConnection.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlDataAdapter.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlDataReader.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlError.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlException.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlHelper.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlInfoMessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlInfoMessageEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlParameter.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlParameterCollection.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatedEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatingEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlSchemaCollection.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlSchemaRow.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScript.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScriptErrorEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScriptErrorEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScriptEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlSecurityPermission.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlStatementExecutedEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlTrace.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlTransaction.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Replication.ReplicationRoundRobinServerGroup.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Replication.ReplicationServer.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Replication.ReplicationServerGroup.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.ReplicationConfigurationElement.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.ReplicationServerConfigurationElement.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.ReplicationServerGroupConfigurationElement.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.SchemaColumn.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.Types.MySqlConversionException.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.Types.MySqlDateTime.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.Types.MySqlDecimal.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.Types.MySqlGeometry.datasource" />
+    <None Include="Properties\DataSources\MySqlX.Protocol.ProtocolBase.datasource" />
+    <None Include="Properties\DataSources\MySqlX.Serialization.JsonParser.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.BaseSession.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Client.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Collection.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Common.BaseResult.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Common.CreateCollectionOptions.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Common.ErrorInfo.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Common.ModifyCollectionOptions.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Common.Result.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Common.Validation.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Common.WarningInfo.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.CRUD.AddStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.CRUD.CreateCollectionIndexStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.CRUD.DocResult.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.CRUD.FindStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.CRUD.ModifyStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.CRUD.RemoveStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.DatabaseObject.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.DbDoc.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Iterator.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.MySqlExpression.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.MySQLX.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.MySqlXConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.Column.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.InternalRowResult.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.Row.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.RowResult.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.SqlResult.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.SqlStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.Table.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.TableDeleteStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.TableInsertStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.TableSelectStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Relational.TableUpdateStatement.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Schema.datasource" />
+    <None Include="Properties\DataSources\MySqlX.XDevAPI.Session.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\node-output\src\IO.Swagger.Test\IO.Swagger.Test.csproj">
+      <Project>{19f1debc-de5e-4517-8062-f000cd499087}</Project>
+      <Name>IO.Swagger.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\node-output\src\IO.Swagger\IO.Swagger.csproj">
+      <Project>{471be58d-87b2-4365-893f-da67f1ec9e6d}</Project>
+      <Name>IO.Swagger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\node-output\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
