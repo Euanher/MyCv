@@ -13,6 +13,10 @@
     },
     "version" : "3.0.0-oas3"
   },
+  "externalDocs" : {
+    "description" : "C:/Mycv/web_MYCV/wwwroot",
+    "url" : "file:///C:/Mycv/web_MYCV/wwwroot"
+  },
   "servers" : [ {
     "url" : "/"
   } ],
