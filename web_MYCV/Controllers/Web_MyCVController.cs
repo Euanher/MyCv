@@ -11,11 +11,7 @@ namespace web_MYCV.Controllers
     [Route("[controller]")]
     public class Web_MyCVController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
+        
         private readonly ILogger<Web_MyCVController> _logger;
 
         public Web_MyCVController(ILogger<Web_MyCVController> logger)
@@ -30,8 +26,8 @@ namespace web_MYCV.Controllers
             return Enumerable.Range(1, 5).Select(index => new Web_MyCV
             {
                 Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+               
+              
             })
             .ToArray();
         }

@@ -6,8 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <OpenApiReference Include="..\node-output\.swagger-codegen\Euanher-MyCVnew-1.0.0-swagger.yaml" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\Euanher-MyCVnew-1.0.0-swagger.yaml" />
-    <OpenApiReference Include="..\node-output\api\openapi.yaml" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\openapi.yaml" />
     <OpenApiReference Include="..\node-output\package.json" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\package.json" />
     <OpenApiReference Include="..\node-output\swagger.yaml" CodeGenerator="NSwagCSharp" Namespace="MyCV" ClassName="MyCV" Link="OpenAPIs\swagger.yaml" />
   </ItemGroup>

@@ -8,6 +8,13 @@ OpenAPI spec version: 1.0.0
 Contact: you@your-company.com
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\NSwag.AspNetCore.13.15.5\build\NSwag.AspNetCore.props" Condition="Exists('..\..\packages\NSwag.AspNetCore.13.15.5\build\NSwag.AspNetCore.props')" />
+  <Import Project="..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.props" Condition="Exists('..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.props')" />
+  <Import Project="..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.props" Condition="Exists('..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.props')" />
+  <Import Project="..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.props" Condition="Exists('..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.props')" />
+  <Import Project="..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.props" Condition="Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.props')" />
+  <Import Project="..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.props" Condition="Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.props')" />
+  <Import Project="..\..\packages\NSwag.MSBuild.13.15.5\build\NSwag.MSBuild.props" Condition="Exists('..\..\packages\NSwag.MSBuild.13.15.5\build\NSwag.MSBuild.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -43,8 +50,40 @@ Contact: you@your-company.com
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
     <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="Namotion.Reflection, Version=2.0.9.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Namotion.Reflection.2.0.9\lib\net45\Namotion.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NJsonSchema, Version=10.6.6.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NJsonSchema.10.6.6\lib\net45\NJsonSchema.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NJsonSchema.Yaml, Version=10.6.6.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NJsonSchema.Yaml.10.6.6\lib\net45\NJsonSchema.Yaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSwag.Core, Version=13.15.5.0, Culture=neutral, PublicKeyToken=c2d88086e098d109, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NSwag.Core.13.15.5\lib\net45\NSwag.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSwag.Core.Yaml, Version=13.15.5.0, Culture=neutral, PublicKeyToken=c2d88086e098d109, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NSwag.Core.Yaml.13.15.5\lib\net45\NSwag.Core.Yaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSwag.Generation, Version=13.15.5.0, Culture=neutral, PublicKeyToken=c2d88086e098d109, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NSwag.Generation.13.15.5\lib\net45\NSwag.Generation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSwag.SwaggerGeneration, Version=12.3.0.0, Culture=neutral, PublicKeyToken=c2d88086e098d109, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NSwag.SwaggerGeneration.12.3.0\lib\net45\NSwag.SwaggerGeneration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSwag.SwaggerGeneration.WebApi, Version=12.3.0.0, Culture=neutral, PublicKeyToken=c2d88086e098d109, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NSwag.SwaggerGeneration.WebApi.12.3.0\lib\net45\NSwag.SwaggerGeneration.WebApi.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -64,6 +103,10 @@ Contact: you@your-company.com
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\YamlDotNet.11.2.1\lib\net45\YamlDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
@@ -174,4 +217,26 @@ Contact: you@your-company.com
     <Folder Include="obj\" />
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\NSwag.MSBuild.13.15.5\build\NSwag.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NSwag.MSBuild.13.15.5\build\NSwag.MSBuild.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.props'))" />
+    <Error Condition="!Exists('..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.props'))" />
+    <Error Condition="!Exists('..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.targets'))" />
+    <Error Condition="!Exists('..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.props'))" />
+    <Error Condition="!Exists('..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.targets'))" />
+    <Error Condition="!Exists('..\..\packages\NSwag.AspNetCore.13.15.5\build\NSwag.AspNetCore.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NSwag.AspNetCore.13.15.5\build\NSwag.AspNetCore.props'))" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.targets" Condition="Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Server.6.0.1\build\Microsoft.Extensions.ApiDescription.Server.targets')" />
+  <Import Project="..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.targets" Condition="Exists('..\..\packages\Microsoft.Extensions.ApiDescription.Client.6.0.1\build\Microsoft.Extensions.ApiDescription.Client.targets')" />
+  <Import Project="..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.targets" Condition="Exists('..\..\packages\Stenn.MSBuild.Extensions.1.0.12\build\Stenn.MSBuild.Extensions.targets')" />
+  <Import Project="..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.targets" Condition="Exists('..\..\packages\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.1.0.21\build\Stenn.AspNetCore.Versioning.MSBuild.Swashbuckle.targets')" />
+  <Import Project="..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.targets" Condition="Exists('..\..\packages\coverlet.msbuild.3.1.0\build\coverlet.msbuild.targets')" />
 </Project>
