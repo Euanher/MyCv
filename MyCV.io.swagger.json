@@ -440,5 +440,22 @@
         }
       }
     }
+  },
+  "components" : {
+    "schemas" : {
+      "HTML" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "description" : "HTML REFER"
+      },
+      "Schema" : {
+        "description" : "I"
+      }
+    }
   }
 }
