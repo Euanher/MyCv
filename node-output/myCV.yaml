@@ -1,0 +1,226 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "MyCv",
+    "description" : "This is a simple API",
+    "contact" : {
+      "name" : "Euan",
+      "email" : "euanheradien@gmail.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "3.0.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "tags" : [ {
+    "name" : "admins",
+    "description" : "Secured Admin-only calls"
+  }, {
+    "name" : "developers",
+    "description" : "Operations available to regular developers"
+  } ],
+  "paths" : {
+    "/recruiter" : {
+      "post" : {
+        "tags" : [ "recruiter" ],
+        "summary" : "Create recruiter",
+        "description" : "This can only be done by the logged in recruiter.",
+        "operationId" : "createRecruiter",
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/recruiter/createWithArray" : {
+      "post" : {
+        "tags" : [ "recruiter" ],
+        "summary" : "Creates list of recruiters with given input array",
+        "operationId" : "createRecruitersWithArrayInput",
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/Recruiter/createWithList" : {
+      "get" : {
+        "tags" : [ "recruiter" ],
+        "summary" : "Logs recruiter into the system",
+        "operationId" : "loginRecruiter",
+        "parameters" : [ {
+          "name" : "Recruitername",
+          "in" : "query",
+          "description" : "The recruiter name for login",
+          "required" : true,
+          "style" : "form",
+          "explode" : true
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "description" : "The password for login in clear text",
+          "required" : true,
+          "style" : "form",
+          "explode" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "headers" : {
+              "X-Rate-Limit" : {
+                "description" : "calls per hour allowed by the recruiter",
+                "style" : "simple",
+                "explode" : false
+              },
+              "X-Expires-After" : {
+                "description" : "date in UTC when token expires",
+                "style" : "simple",
+                "explode" : false
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid username/password supplied"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "recruiter" ],
+        "summary" : "Creates list of recruiters with given input array",
+        "operationId" : "createRecruitersWithListInput",
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/recruiter/logout" : {
+      "get" : {
+        "tags" : [ "recruiter" ],
+        "summary" : "Logs out current logged in recruiter session",
+        "operationId" : "logoutRecruiter",
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/recruiter/{recruitername}" : {
+      "get" : {
+        "tags" : [ "Recruiter" ],
+        "summary" : "Get recruiter by recruiter name",
+        "operationId" : "getRecruiterByName",
+        "parameters" : [ {
+          "name" : "Recruitername",
+          "in" : "path",
+          "description" : "The name that needs to be fetched. Use recruiter1 for testing. ",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid recruitername supplied"
+          },
+          "404" : {
+            "description" : "Recruiter not found"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Create user",
+        "description" : "This can only be done by the logged in user.",
+        "operationId" : "createUser",
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/user/createWithArray" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Creates list of users with given input array",
+        "operationId" : "createUsersWithArrayInput",
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/user/createWithList" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "Logs user into the system",
+        "operationId" : "loginUser",
+        "parameters" : [ {
+          "name" : "username",
+          "in" : "query",
+          "description" : "The user name for login",
+          "required" : true,
+          "style" : "form",
+          "explode" : true
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "description" : "The password for login in clear text",
+          "required" : true,
+          "style" : "form",
+          "explode" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "headers" : {
+              "X-Rate-Limit" : {
+                "description" : "calls per hour allowed by the user",
+                "style" : "simple",
+                "explode" : false
+              },
+              "X-Expires-After" : {
+                "description" : "date in UTC when token expires",
+                "style" : "simple",
+                "explode" : false
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid username/password supplied"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Creates list of users with given input array",
+        "operationId" : "createUsersWithListInput",
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}
