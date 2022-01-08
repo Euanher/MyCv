@@ -28,10 +28,10 @@ namespace web_MYCV
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "web_MYCV", Version = "v1" });
-            });
+            _ = services.AddSwaggerGen(c =>
+              {
+                  c.SwaggerDoc("v1", new OpenApiInfo { Title = "web_MYCV", Version = "v1" });
+              });
             services.AddApplicationInsightsTelemetry();
         }
 

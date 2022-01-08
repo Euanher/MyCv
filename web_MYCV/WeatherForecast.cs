@@ -2,7 +2,7 @@ using System;
 
 namespace web_MYCV
 {
-    public class WeatherForecast
+    public class Web_MyCV
     {
         public DateTime Date { get; set; }
 
