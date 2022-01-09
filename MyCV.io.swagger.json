@@ -333,12 +333,13 @@
       "flow" : "implicit",
       "scopes" : {
         "write:MyCV" : "modify id wwwroot input/output  in your account",
-        "read:MyCV" : "read your pets"
+        "read:MyCV" : "read your MyCV"
       }
     },
     "api_key" : {
       "type" : "apiKey",
       "name" : "api_key",
+      "api_key" : "6632556e-6f12-4811-8b39-fb70466d80fa",
       "in" : "header"
     }
   },
@@ -451,8 +452,18 @@
         },
         "description" : "HTML REFER"
       },
+      "Security" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "description" : "holds ap_key: 6632556e-6f12-4811-8b39-fb70466d80fa"
+      },
       "Schema" : {
-        "description" : "I"
+        "description" : "h"
       }
     }
   },
