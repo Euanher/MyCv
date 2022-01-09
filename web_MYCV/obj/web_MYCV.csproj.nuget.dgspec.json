@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FubarCoder.RestSharp.Portable.HttpClient": {
+              "target": "Package",
+              "version": "[4.0.8, )"
+            },
             "Microsoft.ApplicationInsights.AspNetCore": {
               "target": "Package",
               "version": "[2.20.0, )"
@@ -63,6 +67,18 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[107.0.1, )"
+            },
+            "RestSharp.Serilog.Auto": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "RestSharpSigned": {
+              "target": "Package",
+              "version": "[105.2.3, )"
             },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",

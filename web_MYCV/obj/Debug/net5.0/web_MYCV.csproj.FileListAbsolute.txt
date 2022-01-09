@@ -1,6 +1,0 @@
-C:\Mycv\web_MYCV\obj\Debug\net5.0\web_MYCV.csproj.AssemblyReference.cache
-C:\Mycv\web_MYCV\obj\Debug\net5.0\web_MYCV.GeneratedMSBuildEditorConfig.editorconfig
-C:\Mycv\web_MYCV\obj\Debug\net5.0\web_MYCV.AssemblyInfoInputs.cache
-C:\Mycv\web_MYCV\obj\Debug\net5.0\web_MYCV.AssemblyInfo.cs
-C:\Mycv\web_MYCV\obj\Debug\net5.0\web_MYCV.csproj.CoreCompileInputs.cache
-C:\Mycv\web_MYCV\obj\Debug\net5.0\web_MYCV.MvcApplicationPartsAssemblyInfo.cache

@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.0 
 info:
   description: This is a simple API
   version: 3.0.0-oas3
@@ -358,3 +358,17 @@ definitions:
         format: int64
       name:
         type: string
+components:
+  schemas:
+    HTML:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+      description: HTML REFER
+    Schema:
+      description: I
+externalDocs:
+  description: C:/Mycv/web_MYCV/wwwroot
+  url: file:///C:/Mycv/web_MYCV/wwwroot

@@ -22,5 +22,7 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNSwag_MSBuild Condition=" '$(PkgNSwag_MSBuild)' == '' ">C:\Users\Euan Heradien\.nuget\packages\nswag.msbuild\13.14.5</PkgNSwag_MSBuild>
+    <PkgFubarCoder_RestSharp_Portable_Core Condition=" '$(PkgFubarCoder_RestSharp_Portable_Core)' == '' ">C:\Users\Euan Heradien\.nuget\packages\fubarcoder.restsharp.portable.core\4.0.8</PkgFubarCoder_RestSharp_Portable_Core>
+    <PkgFubarCoder_RestSharp_Portable_HttpClient Condition=" '$(PkgFubarCoder_RestSharp_Portable_HttpClient)' == '' ">C:\Users\Euan Heradien\.nuget\packages\fubarcoder.restsharp.portable.httpclient\4.0.8</PkgFubarCoder_RestSharp_Portable_HttpClient>
   </PropertyGroup>
 </Project>

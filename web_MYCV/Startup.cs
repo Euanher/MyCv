@@ -23,8 +23,7 @@ namespace web_MYCV
             services.AddControllers();
             _ = services.AddSwaggerGen(c =>
               {
-                  OpenApiInfo openApiInfo = new OpenApiInfo { Title = "MyCV", Version = "v3.0.0oas3" };
-                  OpenApiInfo info = openApiInfo;
+                  OpenApiInfo info = new OpenApiInfo { Title = "MyCV", Version = "v3.0.0oas3" };
                   c.SwaggerDoc("vv3.0.0oas3", info);
               });
             services.AddApplicationInsightsTelemetry();
