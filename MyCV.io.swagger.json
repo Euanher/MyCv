@@ -1,5 +1,5 @@
 {
-  "openapi" : "OAS 3",
+  "openapi" : "OAS 3.0.0",
   "info" : {
     "description" : "This is a simple API",
     "version" : "3.0.0-oas3",
